@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Mood Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Daily Mood Tracker</h1>
+        <p class="subtitle">Pick your mood today, then see your week at a glance.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card" aria-labelledby="mood-selection-title">
+        <div class="section-header">
+          <h2 id="mood-selection-title">Select your mood</h2>
+          <p class="muted">This will save to your 7-day history.</p>
+        </div>
+
+        <div class="mood-buttons" role="group" aria-label="Mood selection">
+          <button class="mood-btn mood-happy" type="button" data-mood="happy">
+            <span class="emoji" aria-hidden="true">😊</span>
+            <span class="label">Happy</span>
+          </button>
+          <button class="mood-btn mood-neutral" type="button" data-mood="neutral">
+            <span class="emoji" aria-hidden="true">😐</span>
+            <span class="label">Neutral</span>
+          </button>
+          <button class="mood-btn mood-sad" type="button" data-mood="sad">
+            <span class="emoji" aria-hidden="true">😢</span>
+            <span class="label">Sad</span>
+          </button>
+          <button class="mood-btn mood-angry" type="button" data-mood="angry">
+            <span class="emoji" aria-hidden="true">😡</span>
+            <span class="label">Angry</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="today-title">
+        <div class="section-header">
+          <h2 id="today-title">Today’s Mood</h2>
+          <p class="muted">Updated when you choose a mood.</p>
+        </div>
+
+        <div id="todayMood" class="today-mood today-none" role="status" aria-live="polite">
+          <div class="today-emoji" aria-hidden="true">—</div>
+          <div class="today-text">
+            <div class="today-label">No mood selected yet</div>
+            <div class="today-date" id="todayDate"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="history-title">
+        <div class="section-header history-header">
+          <div>
+            <h2 id="history-title">Weekly Mood History</h2>
+            <p class="muted">Last 7 days (today highlighted).</p>
+          </div>
+          <button id="resetBtn" class="reset-btn" type="button">Reset History</button>
+        </div>
+
+        <div id="historyGrid" class="history-grid" aria-label="Mood history for the last 7 days"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Built with HTML, CSS, and JavaScript.</small>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
